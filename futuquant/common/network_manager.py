@@ -191,6 +191,7 @@ class NetManager:
         if self._thread is not None:
             return
         self._thread = threading.Thread(target=self._thread_func)
+        self._thread.setDaemon(True)
         self._thread.start()
 
     def stop(self):
